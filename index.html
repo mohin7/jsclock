@@ -39,7 +39,11 @@
             const sec = now.getSeconds();
             const secDegree = ((sec/60) * 360) + 90;
             secHandle.style.transform = `rotate(${secDegree}deg)`
-     
+            if(sec === 0){
+                secHandle.style.transition = "0s"
+            }else{
+                secHandle.style.transition = ".5s"
+            }
             // Get Min
             const min = now.getMinutes();
             const minDegree = ((min/60) * 360) + 90;
