@@ -31,8 +31,8 @@ body{
 .handle {
     position: absolute;
     border-radius: 50%;
-    transition: .05s;
-    transition-timing-function: cubic-bezier(0.38, 4.24, 0.58, 1);
+    transition: .5s;
+    transition-timing-function: ease-in-out;
 }
 
 .hour-handle, .min-handle, .sec-handle {
