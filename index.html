@@ -6,8 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#2D9AED">
     <title>JS Clock</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="content">
+        <div class="clock-wrapper">
+            <div class="digital-time"></div>
+            <div class="clock-inner">
+                <span>12</span>
+                <span>03</span>
+                <span>06</span>
+                <span>09</span>
+                <div class="handle hour-handle"></div>
+                <div class="handle min-handle"></div>
+                <div class="handle sec-handle"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        const  hourHandle = document.querySelector(".hour-handle");
+        const  minHandle = document.querySelector(".min-handle");
+        const  secHandle = document.querySelector(".sec-handle");
+        const  digitalTime = document.querySelector(".digital-time");
+
+        function getTime(){
+            const now = new Date();
+            // Get Second
+            const sec = now.getSeconds();
+            const secDegree = ((sec/60) * 360) + 90;
+            secHandle.style.transform = `rotate(${secDegree}deg)`
+            
+
+            // Get Min
+            const min = now.getMinutes();
+            const minDegree = ((min/60) * 360) + 90;
+            minHandle.style.transform = `rotate(${minDegree}deg)`
+
+            // Get Min
+            const hour = now.getHours();
+            const hourDegree = ((hour/12) * 360) + 90;
+            hourHandle.style.transform = `rotate(${hourDegree}deg)`
+
+            // Get Digital time
+            digitalTime.innerHTML = `${hour}:${min}:${sec}`
+           
+            
+            
+            
+        }
+
+        setInterval(getTime, 1000)
+    </script>
 </body>
 </html>
