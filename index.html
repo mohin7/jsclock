@@ -27,7 +27,7 @@
 
 
     <script>
-
+        // Variable Set
         const  hourHandle = document.querySelector(".hour-handle");
         const  minHandle = document.querySelector(".min-handle");
         const  secHandle = document.querySelector(".sec-handle");
@@ -39,8 +39,7 @@
             const sec = now.getSeconds();
             const secDegree = ((sec/60) * 360) + 90;
             secHandle.style.transform = `rotate(${secDegree}deg)`
-            
-
+     
             // Get Min
             const min = now.getMinutes();
             const minDegree = ((min/60) * 360) + 90;
@@ -53,7 +52,7 @@
 
             // Get Digital time
             digitalTime.innerHTML = `${hour}:${min}:${sec}`
-           
+            
             
             
             
